@@ -31,3 +31,6 @@ export function getPopularCourses(courses, minStudents) {
         return course.isPublished === true && course.students >= minStudents;
     });
 }
+export function pluckValues(items, key) {
+    return items.map((item) => item[key]);
+}

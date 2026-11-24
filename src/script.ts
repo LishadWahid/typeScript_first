@@ -1,4 +1,4 @@
-import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, type Course } from "./solutions.js";
+import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, type Course, pluckValues } from "./solutions.js";
 
 
 
@@ -26,4 +26,17 @@ const courses: Course[] = [
 ];
 
 console.log(getPopularCourses(courses, 80));
+
+
+const users = [
+    { id: 1, name: "Rakib", role: "Admin" },
+    { id: 2, name: "Sadia", role: "Editor" },
+    { id: 3, name: "Tariq", role: "Subscriber" }
+];
+
+console.log(pluckValues(users, "name"));
+console.log(pluckValues(users, "id"));
+
+
+
 

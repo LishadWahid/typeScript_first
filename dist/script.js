@@ -1,4 +1,4 @@
-import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses } from "./solutions.js";
+import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, pluckValues } from "./solutions.js";
 console.log(multiplyValue(10));
 console.log(multiplyValue(10, 5));
 console.log(multiplyValue(7, 0));
@@ -17,3 +17,10 @@ const courses = [
     { title: "Next.js Pro", students: 85, isPublished: true }
 ];
 console.log(getPopularCourses(courses, 80));
+const users = [
+    { id: 1, name: "Rakib", role: "Admin" },
+    { id: 2, name: "Sadia", role: "Editor" },
+    { id: 3, name: "Tariq", role: "Subscriber" }
+];
+console.log(pluckValues(users, "name"));
+console.log(pluckValues(users, "id"));

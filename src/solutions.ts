@@ -51,3 +51,11 @@ export function getPopularCourses(
         return course.isPublished === true && course.students >= minStudents;
     });
 }
+
+
+export function pluckValues<T, K extends keyof T> (
+    items: T[],
+    key: K
+): T[K][] {
+    return items.map((item) => item[key])
+}
