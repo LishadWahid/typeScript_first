@@ -36,3 +36,18 @@ export function formatCoordinate( coordinate: readonly [number, number, string])
 export function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
 }
+
+export interface Course {
+    title: string;
+    students: number;
+    isPublished: boolean;
+}
+
+export function getPopularCourses(
+    courses: Course[],
+    minStudents: number
+): Course[] {
+    return courses.filter((course) => {
+        return course.isPublished === true && course.students >= minStudents;
+    });
+}

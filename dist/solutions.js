@@ -26,3 +26,8 @@ export function formatCoordinate(coordinate) {
 export function concatenateArrays(...arrays) {
     return arrays.flat();
 }
+export function getPopularCourses(courses, minStudents) {
+    return courses.filter((course) => {
+        return course.isPublished === true && course.students >= minStudents;
+    });
+}
