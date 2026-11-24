@@ -17,3 +17,12 @@ export function processInput(value) {
         return value ? "Active" : "Inactive";
     }
 }
+export function formatCoordinate(coordinate) {
+    const latitude = coordinate[0];
+    const longitude = coordinate[1];
+    const locationName = coordinate[2];
+    return `Location: ${locationName}, Latitude: ${latitude}, Longitude: ${longitude}`;
+}
+export function concatenateArrays(...arrays) {
+    return arrays.flat();
+}
