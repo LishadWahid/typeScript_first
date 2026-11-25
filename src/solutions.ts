@@ -28,7 +28,7 @@ export function formatCoordinate( coordinate: readonly [number, number, string])
     const longitude = coordinate[1];
     const locationName = coordinate[2];
 
-    return `Location: ${locationName}, Latitude: ${latitude}, Longitude: ${longitude}`;
+    return `Location: ${locationName} (${latitude}, ${longitude})`;
 }
 
 
@@ -58,4 +58,34 @@ export function pluckValues<T, K extends keyof T> (
     key: K
 ): T[K][] {
     return items.map((item) => item[key])
+}
+
+
+export class Employee {
+    protected name: string;
+    private baseSalary: number;
+
+    constructor(name: string, baseSalary: number){
+        this.name = name;
+        this.baseSalary = baseSalary;
+    }
+
+    getDetails(): string {
+        return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+    }
+}
+
+
+export class Manager extends Employee{
+    private department: string;
+
+    constructor(name: string, baseSalary: number, department: string) {
+        super(name, baseSalary);
+        this.department = department;
+    }
+
+    getRoleInfo(): string {
+        return `Manager of ${this.department}: ${this.name}`;
+}
+
 }
