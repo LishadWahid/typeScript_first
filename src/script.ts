@@ -1,4 +1,4 @@
-import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, type Course, pluckValues, Employee, Manager} from "./solutions.js";
+import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, type Course, pluckValues, Employee, Manager, validateAgeAsync} from "./solutions.js";
 
 
 
@@ -42,5 +42,23 @@ const manager = new Manager("Alice", 50000, "Engineering")
 
 console.log(manager.getDetails());
 console.log(manager.getRoleInfo());
+
+
+
+validateAgeAsync(20)
+.then((result) => {
+    console.log(result);
+})
+.catch((error: Error) => {
+    console.log(error.message)
+});
+
+validateAgeAsync(15).then((result) => {
+    console.log(result);
+})
+.catch((error: Error) => {
+    console.log(error.message);
+});
+
 
 

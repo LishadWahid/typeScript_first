@@ -1,3 +1,5 @@
+
+// Question_1
 export function multiplyValue (
     value: number,
     multiplier?: number
@@ -9,6 +11,8 @@ export function multiplyValue (
     }
 }
 
+
+// Question_2
 export function processInput(value: string | number | boolean): string | number {
     if (typeof value === "string") {
         return value.trim().toLowerCase();
@@ -23,6 +27,8 @@ export function processInput(value: string | number | boolean): string | number 
     }
 }   
 
+
+// Question_3
 export function formatCoordinate( coordinate: readonly [number, number, string]): string {
     const  latitude = coordinate[0];
     const longitude = coordinate[1];
@@ -32,11 +38,13 @@ export function formatCoordinate( coordinate: readonly [number, number, string])
 }
 
 
-
+// Question_4
 export function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
 }
 
+
+// Question_5
 export interface Course {
     title: string;
     students: number;
@@ -53,6 +61,8 @@ export function getPopularCourses(
 }
 
 
+
+//Question_6
 export function pluckValues<T, K extends keyof T> (
     items: T[],
     key: K
@@ -61,6 +71,8 @@ export function pluckValues<T, K extends keyof T> (
 }
 
 
+
+// Question_7
 export class Employee {
     protected name: string;
     private baseSalary: number;
@@ -89,3 +101,20 @@ export class Manager extends Employee{
 }
 
 }
+
+
+
+// Question_8
+export async function validateAgeAsync(age: number): Promise<string>{
+    return new Promise((resolve, reject) => {
+        if(age >= 18){
+            setTimeout(() => {
+                resolve("Access Granted")
+            }, 1000);
+        }else {
+            reject (new Error ("Access Denied: Must be 18 or older"));
+        }
+    })
+}
+
+

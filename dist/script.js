@@ -1,4 +1,4 @@
-import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, pluckValues, Manager } from "./solutions.js";
+import { multiplyValue, processInput, formatCoordinate, concatenateArrays, getPopularCourses, pluckValues, Manager, validateAgeAsync } from "./solutions.js";
 console.log(multiplyValue(10));
 console.log(multiplyValue(10, 5));
 console.log(multiplyValue(7, 0));
@@ -27,3 +27,16 @@ console.log(pluckValues(users, "id"));
 const manager = new Manager("Alice", 50000, "Engineering");
 console.log(manager.getDetails());
 console.log(manager.getRoleInfo());
+validateAgeAsync(20)
+    .then((result) => {
+    console.log(result);
+})
+    .catch((error) => {
+    console.log(error.message);
+});
+validateAgeAsync(15).then((result) => {
+    console.log(result);
+})
+    .catch((error) => {
+    console.log(error.message);
+});
